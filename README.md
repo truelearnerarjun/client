@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🌐 Domain Name Availability Checker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that allows users to check the availability of domain names in real-time. Built with Node.js and Express.js, it integrates with the Domainr API to deliver accurate domain status updates.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **Real-Time Checks** – Instantly verify if a domain name is available
+- **User-Friendly Interface** – Simple and intuitive UI
+- **API Integration** – Uses [Domainr API](https://domainr.com/docs/api)
+- **Responsive Design** – Works well on all screen sizes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: Node.js, Express.js
+- **API**: Domainr API
+- **Styling**: Tailwind CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/truelearnerarjun/client.git
+   cd client
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   Install dependencies
+   
 
-### `npm run eject`
+🔍 How to Use
+Go to the homepage.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Enter a domain (e.g., example.com).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Click Check Availability.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+See if it’s available or already registered.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📄 API Details (Domainr)
+Endpoint: https://api.domainr.com/v2/status
 
-## Learn More
+Method: GET
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Required Parameters:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+domain – the domain name to check
 
-### Code Splitting
+client_id – your Domainr API client ID
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Example Request:
 
-### Analyzing the Bundle Size
+http
+Copy
+Edit
+GET https://api.domainr.com/v2/status?client_id=your_client_id&domain=example.com
+Sample Response:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+json
+Copy
+Edit
+{
+  "status": [
+    {
+      "domain": "example.com",
+      "zone": "com",
+      "status": "active",
+      "summary": "active"
+    }
+  ]
+}
+📁 Project Structure
+pgsql
+Copy
+Edit
+client/
+├── public/
+│   ├── index.html
+│   └── styles.css
+├── src/
+│   ├── app.js
+│   └── routes/
+│       └── domain.js
+├── .env
+├── package.json
+└── README.md
+🤝 Contributing
+Feel free to fork this repo and submit pull requests to improve functionality or design
